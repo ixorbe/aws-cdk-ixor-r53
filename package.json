@@ -1,13 +1,13 @@
 {
   "name": "@ixor/aws-cdk-ixor-r53",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/ixorbe/aws-cdk-ixor-r53.git"
   },
   "license": "MIT",
   "main": "lib/aws-cdk-ixor-r53",
-  "author": "Rik Tytgat <rik.tytgat@tryx.com> (https://github.com/rik2803/)",
+  "author": "Rik Tytgat <rik.tytgat@ixor.be> (https://github.com/ixorbe/)",
   "keywords": [
     "cdk"
   ],
