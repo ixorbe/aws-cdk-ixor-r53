@@ -1,9 +1,16 @@
 {
-  "name": "aws-cdk-ixor-r53",
-  "version": "0.1.0",
-  "bin": {
-    "aws-cdk-ixor-r53": "bin/aws-cdk-ixor-r53.js"
+  "name": "@ixor/aws-cdk-ixor-r53",
+  "version": "0.1.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ixorbe/aws-cdk-ixor-r53.git"
   },
+  "license": "MIT",
+  "main": "lib/aws-cdk-ixor-r53",
+  "author": "Rik Tytgat <rik.tytgat@tryx.com> (https://github.com/rik2803/)",
+  "keywords": [
+    "cdk"
+  ],
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
@@ -22,6 +29,8 @@
   },
   "dependencies": {
     "@aws-cdk/core": "1.25.0",
-    "source-map-support": "^0.5.16"
+    "source-map-support": "^0.5.16",
+    "@aws-cdk/aws-sns": "latest",
+    "@aws-cdk/aws-cloudformation": "latest"
   }
 }

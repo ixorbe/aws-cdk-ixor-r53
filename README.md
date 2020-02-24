@@ -1,14 +1,30 @@
-# Welcome to your CDK TypeScript project!
+# aws-cdk-ixor-r53 module
 
-This is a blank project for TypeScript development with CDK.
+## Construct library to add Route53 Resource Records to a Hosted Zone
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+### Introduction
 
-## Useful commands
+This will only work with the Route53 setup and Custom CloudFormation resource at Ixor.
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+### How to use
+
+```typescript
+import {R53} from "@ixor/aws-cdk-ixor-r53";
+import {Stack, Construct, StackProps} from "@aws-cdk/core";
+
+export class MyStack extends Stack {
+
+    constructor(scope: Construct, id: string, props?: StackProps) {
+        super(scope, id, props);
+
+        new R53(
+            this, `r53_${this.node.id}`,
+            {
+                topicArn: this.node.tryGetContext("r53TopicArn"),
+                RecordType: "CNAME",
+                Source: "aLoadBalancerDnsName",
+                Target: "www.my.domain"
+            })
+    }
+}        
+```
